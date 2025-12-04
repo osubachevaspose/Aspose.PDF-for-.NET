@@ -3,12 +3,11 @@ using System.IO;
 
 namespace Aspose.Pdf.Examples.CSharp
 {
-    class RunExamples
+    public static class Examples
     {
-        [STAThread]
         public static void Main()
         {
-            Console.WriteLine("Open RunExamples.cs.");
+            Console.WriteLine("Open Examples.cs.");
             Console.WriteLine("In Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
             //Uncomment the one you want to try out
@@ -19,8 +18,8 @@ namespace Aspose.Pdf.Examples.CSharp
             //=====================================================
             //=====================================================
 
-            AsposePDF.GetStarted.HelloWorld();
-            AsposePDF.GetStarted.CreatingComplexPdf();
+            AsposePDF.GetStarted.RunExamples();
+            AsposePDF.Basic.RunExamples();
 
             //QuickStart
             //=====================================================
@@ -430,185 +429,196 @@ namespace Aspose.Pdf.Examples.CSharp
             #endregion
 
             // Stop before exiting
-            Console.WriteLine("\n\nProgram Finished. Press any key to exit....");
+            Console.WriteLine("Program finished. Press any key to exit...");
             Console.ReadKey();
         }
 
-        private static string GetDataDir_Data()
+        public static string GetDataDir()
         {
             DirectoryInfo parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
             string startDirectory = null;
             if (parent != null)
             {
                 DirectoryInfo directoryInfo = parent.Parent;
-                if (directoryInfo != null) startDirectory = directoryInfo.FullName;
+                if (directoryInfo != null)
+                    startDirectory = directoryInfo.FullName;
             }
             else
                 startDirectory = parent.FullName;
             return Path.Combine(startDirectory, @"Data\");
         }
 
+        public static string GetOutDir()
+        {
+            return Path.Combine(Directory.GetCurrentDirectory(), "Output");
+        }
+
         public static string GetDataDir_AsposePdf_GetStarted()
         {
-            return Path.GetFullPath(Path.Combine(GetDataDir_Data(), "AsposePDF/GetStarted/"));
+            return Path.GetFullPath(Path.Combine(GetDataDir(), "AsposePDF", "GetStarted"));
+        }
+
+        public static string GetDataDir_AsposePdf_Basic()
+        {
+            return Path.GetFullPath(Path.Combine(GetDataDir(), "AsposePDF", "Basic"));
         }
 
         public static string GetDataDir_AsposePdf_TechnicalArticles()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Technical-Articles/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Technical-Articles/");
         }
         public static string GetDataDir_AsposePdfFacades_TechnicalArticles()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Technical-Articles/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Technical-Articles/");
         }
         public static string GetDataDir_AsposePdf_DocumentConversion_PDFToHTMLFormat()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/DocumentConversion/PDFToHTMLFormat/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/DocumentConversion/PDFToHTMLFormat/");
         }
         public static string GetDataDir_AsposePdf_Annotations()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Annotations/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Annotations/");
         }
         public static string GetDataDir_AsposePdf_Graphs()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Graphs/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Graphs/");
         }
         public static string GetDataDir_AsposePdf_Headings()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Headings/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Headings/");
         }
         public static string GetDataDir_AsposePdf_Miscellaneous()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Miscellaneous/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Miscellaneous/");
         }
         public static string GetDataDir_AsposePdf_Attachments()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Attachments/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Attachments/");
         }
         public static string GetDataDir_AsposePdf_Bookmarks()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Bookmarks/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Bookmarks/");
         }
         public static string GetDataDir_AsposePdf_DocumentConversion()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/DocumentConversion/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/DocumentConversion/");
         }
         public static string GetDataDir_AsposePdf_Forms()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Forms/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Forms/");
         }
         public static string GetDataDir_AsposePdf_Images()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Images/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Images/");
         }
         public static string GetDataDir_AsposePdf_LinksActions()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Links-Actions/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Links-Actions/");
         }
         public static string GetDataDir_AsposePdf_Operators()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Operators/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Operators/");
         }
         public static string GetDataDir_AsposePdf_Pages()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Pages/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Pages/");
         }
         public static string GetDataDir_AsposePdf_SecuritySignatures()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Security-Signatures/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Security-Signatures/");
         }
         public static string GetDataDir_AsposePdf_QuickStart()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/QuickStart/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/QuickStart/");
         }
         public static string GetDataDir_AsposePdf_StampsWatermarks()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Stamps-Watermarks/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Stamps-Watermarks/");
         }
         public static string GetDataDir_AsposePdf_Tables()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Tables/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Tables/");
         }
         public static string GetDataDir_AsposePdf_Text()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Text/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Text/");
         }
         public static string GetDataDir_AsposePdf_WorkingDocuments()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/Working-Document/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/Working-Document/");
         }
         public static string GetDataDir_AsposePdfFacades_SecuritySignatures()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Security-Signatures/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Security-Signatures/");
         }
         public static string GetDataDir_AsposePdfFacades_Annotations()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Annotations/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Annotations/");
         }
         public static string GetDataDir_AsposePdfFacades_Attachments()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Attachments/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Attachments/");
         }
         public static string GetDataDir_AsposePdfFacades_Bookmarks()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Bookmarks/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Bookmarks/");
         }
         public static string GetDataDir_AsposePdfFacades_LinksActions()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Links-Actions/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Links-Actions/");
         }
         public static string GetDataDir_AsposePdfFacades_Forms()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Forms/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Forms/");
         }
         public static string GetDataDir_AsposePdfFacades_Images()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Images/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Images/");
         }
         public static string GetDataDir_AsposePdfFacades_StampsWatermarks()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Stamps-Watermarks/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Stamps-Watermarks/");
         }
         public static string GetDataDir_AsposePdfFacades_Printing()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Printing/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Printing/");
         }
         public static string GetDataDir_AsposePdfFacades_Text()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Text/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Text/");
         }
         public static string GetDataDir_AsposePdfFacades_WorkingDocuments()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Working-Document/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Working-Document/");
         }
         public static string GetDataDir_AsposePdfFacades_Pages()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Pages/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Pages/");
         }
 
         public static string GetDataDir_AsposePdf_DocumentCompare()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/DocumentCompare/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/DocumentCompare/");
         }
 
         public static string GetDataDir_AsposePdfFacades_Concatenate()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Concatenate/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Concatenate/");
         }
 
         public static string GetDataDir_AsposePdfFacades_PageBreak()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Pages/PageBreak/");
+            return Path.GetFullPath(GetDataDir() + "AsposePdfFacades/Pages/PageBreak/");
         }
 
         public static string GetDataDir_AsposePdf_AI()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/AI/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/AI/");
         }
 
         public static object GetDataDir_AsposePdf_HeaderFooter()
         {
-            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/HeaderFooter/");
+            return Path.GetFullPath(GetDataDir() + "AsposePDF/HeaderFooter/");
         }
     }
 }

@@ -1,16 +1,26 @@
 ﻿using System;
 using System.IO;
-using System.IO.Pipes;
 using Aspose.Pdf.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF
 {
     public static class GetStarted
     {
-        public static void HelloWorld()
+        public static void RunExamples()
         {
-            // The path to the documents directory
-            string dataDir = RunExamples.GetDataDir_AsposePdf_GetStarted();
+            string dataDir = Path.Combine(Examples.GetDataDir(), "AsposePDF", "GetStarted");
+            string outDir = Path.Combine(Examples.GetOutDir(), "GetStarted");
+            Directory.CreateDirectory(outDir);
+
+            HelloWorld(Path.Combine(outDir, "HelloWorld_out.pdf"));
+            CreatingComplexPdf(Path.Combine(dataDir, "aspose-logo.jpg"),
+                Path.Combine(outDir, "Complex_out.pdf"));
+            //SetLicenseExample("Aspose.Pdf.lic");
+            //SetLicenseFromStream("Aspose.Pdf.lic");
+        }
+
+        public static void HelloWorld(string outputFileName)
+        {
             // Create PDF document
             using (Document doc = new Document())
             {
@@ -19,37 +29,43 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                 // Add text to new page
                 page.Paragraphs.Add(new TextFragment("Hello World!"));
                 // Save PDF document
-                doc.Save(Path.Combine(dataDir, "HelloWorld_out.pdf"));
+                doc.Save(outputFileName);
             }
         }
 
-        public static void CreatingComplexPdf()
+        public static void CreatingComplexPdf(string imageFileName, string outputFileName)
         {
-            string dataDir = RunExamples.GetDataDir_AsposePdf_GetStarted();
             using (Document doc = new Document())
             {
                 // Add page
                 Page page = doc.Pages.Add();
-
                 // Add image
-                page.AddImage(dataDir + "logo.png", new Rectangle(20, 730, 120, 830));
-
+                page.AddImage(imageFileName, new Rectangle(20, 730, 120, 830));
                 // Add Header
-                TextFragment header = new TextFragment("New ferry routes in Fall 2020");
-                header.TextState.Font = FontRepository.FindFont("Arial");
-                header.TextState.FontSize = 24;
-                header.HorizontalAlignment = HorizontalAlignment.Center;
-                header.Position = new Position(130, 720);
+                TextFragment header = new TextFragment("New ferry routes in Fall 2020")
+                {
+                    TextState =
+                    {
+                        Font = FontRepository.FindFont("Arial"),
+                        FontSize = 24
+                    },
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Position = new Position(130, 720)
+                };
                 page.Paragraphs.Add(header);
-
                 // Add description
                 string descriptionText = "Visitors must buy tickets online and tickets are limited to 5,000 per day. Ferry service is operating at half capacity and on a reduced schedule. Expect lineups.";
-                TextFragment description = new TextFragment(descriptionText);
-                description.TextState.Font = FontRepository.FindFont("Times New Roman");
-                description.TextState.FontSize = 14;
-                description.HorizontalAlignment = HorizontalAlignment.Left;
+                TextFragment description = new TextFragment(descriptionText)
+                {
+                    TextState =
+                    {
+                        Font = FontRepository.FindFont("Times New Roman"),
+                        FontSize = 14
+                    },
+                    HorizontalAlignment = HorizontalAlignment.Left
+                };
                 page.Paragraphs.Add(description);
-
+                // Add table
                 Table table = new Table
                 {
                     ColumnWidths = "200",
@@ -59,7 +75,6 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                     Margin = { Bottom = 10 },
                     DefaultCellTextState = { Font = FontRepository.FindFont("Helvetica") }
                 };
-
                 Row headerRow = table.Rows.Add();
                 headerRow.Cells.Add("Departs City");
                 headerRow.Cells.Add("Departs Island");
@@ -68,7 +83,6 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                     headerRowCell.BackgroundColor = Color.Gray;
                     headerRowCell.DefaultCellTextState.ForegroundColor = Color.WhiteSmoke;
                 }
-
                 TimeSpan time = new TimeSpan(6, 0, 0);
                 TimeSpan incTime = new TimeSpan(0, 30, 0);
                 for (int i = 0; i < 10; i++)
@@ -79,43 +93,21 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                     dataRow.Cells.Add(time.ToString(@"hh\:mm"));
                 }
                 page.Paragraphs.Add(table);
-                doc.Save(Path.Combine(dataDir, "Complex_out.pdf"));
+                doc.Save(outputFileName);
             }
         }
 
-        public static void SetLicenseExample()
+        public static void SetLicenseExample(string licenseFileName)
         {
-            new License().SetLicense("Aspose.Pdf.lic");
-
-            //License license = new License();
-            //try
-            //{
-            //    // Set license
-            //    license.SetLicense("Aspose.Pdf.lic");
-            //}
-            //catch (Exception)
-            //{
-            //    // Something went wrong
-            //    throw;
-            //}
-
-            Console.WriteLine("License set successfully.");
+            new License().SetLicense(licenseFileName);
+            Console.WriteLine("License set successfully from file.");
         }
 
-        public static void SetLicenseFromStream()
+        public static void SetLicenseFromStream(string licenseFileName)
         {
-            using (FileStream fileStream = File.OpenRead("Aspose.Pdf.lic"))
+            using (FileStream fileStream = File.OpenRead(licenseFileName))
                 new License().SetLicense(fileStream);
-
-            //License license = new License();
-            //// Load license from the file stream
-            //FileStream myStream = new FileStream(
-            //    "Aspose.Pdf.lic",
-            //    FileMode.Open);
-            //// Set license
-            //license.SetLicense(myStream);
-
-            Console.WriteLine("License set successfully.");
+            Console.WriteLine("License set successfully from stream.");
         }
     }
 }
