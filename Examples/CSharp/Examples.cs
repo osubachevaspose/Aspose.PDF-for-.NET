@@ -18,7 +18,7 @@ namespace Aspose.Pdf.Examples.CSharp
             //=====================================================
             //=====================================================
 
-            //AsposePDF.GetStarted.RunExamples();
+            AsposePDF.GetStarted.RunExamples();
             AsposePDF.Basic.RunExamples();
 
             //QuickStart
@@ -429,7 +429,9 @@ namespace Aspose.Pdf.Examples.CSharp
             #endregion
 
             // Stop before exiting
-            Console.WriteLine("Program finished. Press any key to exit...");
+            Console.WriteLine();
+            Console.WriteLine("Program finished.");
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
 

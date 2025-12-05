@@ -12,32 +12,32 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
             string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "GetStarted");
             Directory.CreateDirectory(outDir);
 
-            Console.Write("Running HelloWorld example... ");
+            Console.WriteLine("Running HelloWorld example... ");
             HelloWorld(Path.Combine(outDir, "HelloWorld_out.pdf"));
-            Console.WriteLine("finished.");
+            Console.WriteLine("...finished.");
 
-            Console.Write("Running CreatingComplexPdf example... ");
+            Console.WriteLine("Running CreatingComplexPdf example... ");
             CreatingComplexPdf(Path.Combine(dataDir, "aspose-logo.jpg"),
                 Path.Combine(outDir, "Complex_out.pdf"));
-            Console.WriteLine("finished.");
+            Console.WriteLine("...finished.");
 
             //SetLicenseExample("Aspose.Pdf.lic");
             //SetLicenseFromStream("Aspose.Pdf.lic");
 
-            Console.Write("Running LatexWithoutPreambleAndDocEnvironmentexample... ");
+            Console.WriteLine("Running LatexWithoutPreambleAndDocEnvironmentexample... ");
             LatexWithoutPreambleAndDocEnvironment(Path.Combine(outDir, "LatextScriptInPdf_out.pdf"));
-            Console.WriteLine("finished.");
+            Console.WriteLine("...finished.");
 
-            Console.Write("Running LatexWithPreambleAndDocEnvironment example... ");
+            Console.WriteLine("Running LatexWithPreambleAndDocEnvironment example... ");
             LatexWithPreambleAndDocEnvironment(Path.Combine(outDir, "LatextScriptInPdf2_out.pdf"));
-            Console.WriteLine("finished.");
+            Console.WriteLine("...finished.");
 
-            Console.Write("Running LatexTagsSupport example... ");
+            Console.WriteLine("Running LatexTagsSupport example... ");
             LatexTagsSupport(Path.Combine(outDir, "Script_out.pdf"));
-            Console.WriteLine("finished.");
+            Console.WriteLine("...finished.");
         }
 
-        public static void HelloWorld(string outputFileName)
+        public static void HelloWorld(string outFileName)
         {
             // Create PDF document
             using (Document doc = new Document())
@@ -47,11 +47,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                 // Add text to new page
                 page.Paragraphs.Add(new TextFragment("Hello World!"));
                 // Save PDF document
-                doc.Save(outputFileName);
+                doc.Save(outFileName);
             }
         }
 
-        public static void CreatingComplexPdf(string imageFileName, string outputFileName)
+        public static void CreatingComplexPdf(string imageFileName, string outFileName)
         {
             using (Document doc = new Document())
             {
@@ -111,7 +111,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                     dataRow.Cells.Add(time.ToString(@"hh\:mm"));
                 }
                 page.Paragraphs.Add(table);
-                doc.Save(outputFileName);
+                doc.Save(outFileName);
             }
         }
 
@@ -128,7 +128,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
             Console.WriteLine("License set successfully from stream.");
         }
 
-        public static void LatexWithoutPreambleAndDocEnvironment(string outputFileName)
+        public static void LatexWithoutPreambleAndDocEnvironment(string outFileName)
         {
             // Create a Table
             Table table = new Table();
@@ -146,11 +146,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                 Page page = doc.Pages.Add();
                 // Add table inside page
                 page.Paragraphs.Add(table);
-                doc.Save(outputFileName);
+                doc.Save(outFileName);
             }
         }
 
-        public static void LatexWithPreambleAndDocEnvironment(string outputFileName)
+        public static void LatexWithPreambleAndDocEnvironment(string outFileName)
         {
             string latexText = @"\documentclass{article}
                 \begin{document}
@@ -171,11 +171,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
                 Page page = doc.Pages.Add();
                 // Add table inside page
                 page.Paragraphs.Add(table);
-                doc.Save(outputFileName);
+                doc.Save(outFileName);
             }
         }
 
-        public static void LatexTagsSupport(string outputFileName)
+        public static void LatexTagsSupport(string outFileName)
         {
             string latexText = @"
                 \usepackage{amsmath,amsthm}
@@ -193,7 +193,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
             {
                 Page page = doc.Pages.Add();
                 page.Paragraphs.Add(latex);
-                doc.Save(outputFileName);
+                doc.Save(outFileName);
             }
         }
     }
