@@ -18,7 +18,7 @@ namespace Aspose.Pdf.Examples.CSharp
             //=====================================================
             //=====================================================
 
-            AsposePDF.GetStarted.RunExamples();
+            //AsposePDF.GetStarted.RunExamples();
             AsposePDF.Basic.RunExamples();
 
             //QuickStart

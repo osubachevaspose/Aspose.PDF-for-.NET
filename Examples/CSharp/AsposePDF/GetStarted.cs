@@ -9,14 +9,32 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
         public static void RunExamples()
         {
             string dataDir = Path.Combine(Examples.GetDataDir(), "AsposePDF", "GetStarted");
-            string outDir = Path.Combine(Examples.GetOutDir(), "GetStarted");
+            string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "GetStarted");
             Directory.CreateDirectory(outDir);
 
+            Console.Write("Running HelloWorld example... ");
             HelloWorld(Path.Combine(outDir, "HelloWorld_out.pdf"));
+            Console.WriteLine("finished.");
+
+            Console.Write("Running CreatingComplexPdf example... ");
             CreatingComplexPdf(Path.Combine(dataDir, "aspose-logo.jpg"),
                 Path.Combine(outDir, "Complex_out.pdf"));
+            Console.WriteLine("finished.");
+
             //SetLicenseExample("Aspose.Pdf.lic");
             //SetLicenseFromStream("Aspose.Pdf.lic");
+
+            Console.Write("Running LatexWithoutPreambleAndDocEnvironmentexample... ");
+            LatexWithoutPreambleAndDocEnvironment(Path.Combine(outDir, "LatextScriptInPdf_out.pdf"));
+            Console.WriteLine("finished.");
+
+            Console.Write("Running LatexWithPreambleAndDocEnvironment example... ");
+            LatexWithPreambleAndDocEnvironment(Path.Combine(outDir, "LatextScriptInPdf2_out.pdf"));
+            Console.WriteLine("finished.");
+
+            Console.Write("Running LatexTagsSupport example... ");
+            LatexTagsSupport(Path.Combine(outDir, "Script_out.pdf"));
+            Console.WriteLine("finished.");
         }
 
         public static void HelloWorld(string outputFileName)
@@ -108,6 +126,75 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF
             using (FileStream fileStream = File.OpenRead(licenseFileName))
                 new License().SetLicense(fileStream);
             Console.WriteLine("License set successfully from stream.");
+        }
+
+        public static void LatexWithoutPreambleAndDocEnvironment(string outputFileName)
+        {
+            // Create a Table
+            Table table = new Table();
+            // Add a row into Table
+            Row row = table.Rows.Add();
+            // Add Cell with Latex Script to add mathematical expressions/formulae
+            Cell cell = row.Cells.Add();
+            cell.Margin = new MarginInfo { Left = 20, Right = 20, Top = 20, Bottom = 20 };
+            string latexText = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
+            // TeXFragment constructor bool parameter provides LaTeX paragraph indents elimination
+            TeXFragment latex = new TeXFragment(latexText, true);
+            cell.Paragraphs.Add(latex);
+            using (Document doc = new Document())
+            {
+                Page page = doc.Pages.Add();
+                // Add table inside page
+                page.Paragraphs.Add(table);
+                doc.Save(outputFileName);
+            }
+        }
+
+        public static void LatexWithPreambleAndDocEnvironment(string outputFileName)
+        {
+            string latexText = @"\documentclass{article}
+                \begin{document}
+                Latex and the document class will normally take care of page layout issues for you. For submission to an academic publication, this entire topic will be out
+                \end{document}";
+            HtmlFragment html = new HtmlFragment(latexText);
+            //TeXFragment latex = new TeXFragment(latexText);
+            // Create a Table
+            Table table = new Table();
+            // Add a row into Table
+            Row row = table.Rows.Add();
+            // Add Cell with Latex Script to add mathematical expressions/formulae
+            Cell cell = row.Cells.Add();
+            cell.Margin = new MarginInfo { Left = 20, Right = 20, Top = 20, Bottom = 20 };
+            cell.Paragraphs.Add(html);
+            using (Document doc = new Document())
+            {
+                Page page = doc.Pages.Add();
+                // Add table inside page
+                page.Paragraphs.Add(table);
+                doc.Save(outputFileName);
+            }
+        }
+
+        public static void LatexTagsSupport(string outputFileName)
+        {
+            string latexText = @"
+                \usepackage{amsmath,amsthm}
+                \begin{document}
+                \begin{proof} The proof is a follows: 
+                \begin{align}
+                (x+y)^3&=(x+y)(x+y)^2
+                (x+y)(x^2+2xy+y^2)\\
+                &=x^3+3x^2y+3xy^3+x^3.\qedhere
+                \end{align}
+                \end{proof}
+                \end{document}";
+            TeXFragment latex = new TeXFragment(latexText);
+            using (Document doc = new Document())
+            {
+                Page page = doc.Pages.Add();
+                page.Paragraphs.Add(latex);
+                doc.Save(outputFileName);
+            }
         }
     }
 }
