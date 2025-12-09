@@ -31,3 +31,8 @@ Showcases/aspose-pdf-editor/pdf-editor-mvc/operator_Evgeny Pirogov.json
 Showcases/aspose-pdf-translate/operator_Evgeny Pirogov.json
 temp/
 .idea/
+
+################################
+.vs
+.vscode
+packages
