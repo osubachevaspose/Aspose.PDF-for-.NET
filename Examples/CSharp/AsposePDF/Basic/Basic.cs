@@ -4,10 +4,12 @@ using System.IO;
 using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
 
-namespace Aspose.Pdf.Examples.CSharp.AsposePDF;
+namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Basic;
 
 public static class Basic
 {
+    //https://docs.aspose.com/pdf/net/basic-operations/
+
     public static void RunExamples()
     {
         string dataDir = Path.Combine(Examples.GetDataDir(), "AsposePDF", "Basic");

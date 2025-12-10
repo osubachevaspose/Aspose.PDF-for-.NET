@@ -2,10 +2,12 @@
 using System.IO;
 using Aspose.Pdf.Text;
 
-namespace Aspose.Pdf.Examples.CSharp.AsposePDF;
+namespace Aspose.Pdf.Examples.CSharp.AsposePDF.GetStarted;
 
 public static class GetStarted
 {
+    //https://docs.aspose.com/pdf/net/get-started/
+
     public static void RunExamples()
     {
         string dataDir = Path.Combine(Examples.GetDataDir(), "AsposePDF", "GetStarted");
