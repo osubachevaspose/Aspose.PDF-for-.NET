@@ -16,5 +16,6 @@
     <PackageReference Include="DotNetZip.Reduced" Version="1.9.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters.CoreServices" Version="2.1.0" />
+    <PackageReference Include="Openize.HEIC" Version="25.12.0" />
   </ItemGroup>
 </Project>

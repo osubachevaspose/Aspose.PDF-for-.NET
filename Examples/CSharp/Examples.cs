@@ -21,12 +21,14 @@ public static class Examples
         //=====================================================
         //=====================================================
 
-        //GetStarted.RunExamples();
-        //Basic.RunExamples();
-        //PdfToWord.RunExamples();
-        //PdfToExcel.RunExamples();
-        //PdfToPowerPoint.RunExamples();
+        GetStarted.RunExamples();
+        Basic.RunExamples();
+        PdfToWord.RunExamples();
+        PdfToExcel.RunExamples();
+        PdfToPowerPoint.RunExamples();
         HtmlToPdf.RunExamples();
+        PdfToHtml.RunExamples();
+        ImagesToPdf.RunExamples();
 
         //QuickStart
         //=====================================================
