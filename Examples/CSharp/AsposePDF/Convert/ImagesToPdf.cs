@@ -15,70 +15,70 @@ public static class ImagesToPdf
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Convert", "ImagesToPdf");
         Directory.CreateDirectory(outDir);
 
-        //Console.WriteLine("Running ConvertBMPtoPDF example... ");
+        //Console.WriteLine("Running ConvertBMPtoPDF example...");
         //ConvertBMPtoPDF(Path.Combine(dataDir, "BMPtoPDF.bmp"), Path.Combine(outDir, "BMPtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertCGMtoPDF example... ");
+        Console.WriteLine("Running ConvertCGMtoPDF example...");
         ConvertCGMtoPDF(Path.Combine(dataDir, "CGMtoPDF.cgm"), Path.Combine(outDir, "CGMtoPDF.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertDICOMtoPDF example... ");
+        Console.WriteLine("Running ConvertDICOMtoPDF example...");
         //ConvertDICOMtoPDF(Path.Combine(dataDir, "DICOMtoPDF.dcm"), Path.Combine(outDir, "DICOMtoPDF.pdf"));
         ConvertDICOMtoPDF(Path.Combine(dataDir, "0002.dcm"), Path.Combine(outDir, "DICOMtoPDF.pdf"));
         Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertEMFtoPDF example... ");
+        //Console.WriteLine("Running ConvertEMFtoPDF example...");
         //ConvertEMFtoPDF(Path.Combine(dataDir, "EMFtoPDF.emf"), Path.Combine(outDir, "EMFtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertGIFtoPDF example... ");
+        //Console.WriteLine("Running ConvertGIFtoPDF example...");
         //ConvertGIFtoPDF(Path.Combine(dataDir, "GIFtoPDF.gif"), Path.Combine(outDir, "GIFtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertJPGtoPDF example... ");
+        //Console.WriteLine("Running ConvertJPGtoPDF example...");
         //ConvertJPGtoPDF(Path.Combine(dataDir, "JPGtoPDF.jpg"), 
         //    Path.Combine(outDir, "JPGtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertJPGtoPDF_same_page_size example... ");
+        //Console.WriteLine("Running ConvertJPGtoPDF_same_page_size example...");
         //ConvertJPGtoPDF_same_page_size(Path.Combine(dataDir, "JPGtoPDF.jpg"), 
         //    Path.Combine(outDir, "JPGtoPDF_same_page_size.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertPNGtoPDF example... ");
+        //Console.WriteLine("Running ConvertPNGtoPDF example...");
         //ConvertPNGtoPDF(Path.Combine(dataDir, "PNGtoPDF.png"), Path.Combine(outDir, "PNGtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertSVGtoPDF example... ");
+        Console.WriteLine("Running ConvertSVGtoPDF example...");
         ConvertSVGtoPDF(Path.Combine(dataDir, "SVGtoPDF.svg"), Path.Combine(outDir, "SVGtoPDF.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertSVGtoPDF_dimensions example... ");
+        Console.WriteLine("Running ConvertSVGtoPDF_dimensions example...");
         ConvertSVGtoPDF_dimensions(Path.Combine(dataDir, "SVGtoPDF.svg"),
             Path.Combine(outDir, "SVGtoPDF_dimensions.pdf"));
         Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertTIFFtoPDF example... ");
+        //Console.WriteLine("Running ConvertTIFFtoPDF example...");
         //ConvertTIFFtoPDF(Path.Combine(dataDir, "TIFFtoPDF.tif"),
         //    Path.Combine(outDir, "TIFFtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertTIFFtoPDF_multi example... ");
+        //Console.WriteLine("Running ConvertTIFFtoPDF_multi example...");
         //ConvertTIFFtoPDF_multi(Path.Combine(dataDir, "TIFFtoPDF.tif"), 
         //    Path.Combine(outDir, "TIFFtoPDF_multi.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertCDRtoPDF example... ");
+        //Console.WriteLine("Running ConvertCDRtoPDF example...");
         //ConvertCDRtoPDF(Path.Combine(dataDir, "CDRtoPDF.cdr"), Path.Combine(outDir, "CDRtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertDJVUtoPDF example... ");
+        //Console.WriteLine("Running ConvertDJVUtoPDF example...");
         //ConvertDJVUtoPDF(Path.Combine(dataDir, "DJVUtoPDF.djvu"), 
         //    Path.Combine(outDir, "DJVUtoPDF.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertHEICtoPDF example... ");
+        //Console.WriteLine("Running ConvertHEICtoPDF example...");
         //ConvertHEICtoPDF(Path.Combine(dataDir, "HEICtoPDF.heic"),
         //    Path.Combine(outDir, "HEICtoPDF.pdf"));
         //Console.WriteLine("...finished.");

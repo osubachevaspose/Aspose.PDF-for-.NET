@@ -16,78 +16,78 @@ public static class Basic
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Basic");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running HelloWorld example... ");
+        Console.WriteLine("Running HelloWorld example...");
         HelloWorld(Path.Combine(outDir, "HelloWorld.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running OpenDocument example... ");
+        Console.WriteLine("Running OpenDocument example...");
         OpenDocument(Path.Combine(dataDir, "input.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running OpenDocumentStream example... ");
+        Console.WriteLine("Running OpenDocumentStream example...");
         //OpenDocumentStream(
         //    "https://www.sj.se/content/dam/SJ/pdf/Engelska/",
         //    "SJPR0033_Folder_Utland_16sid_ENG_web3.pdf");
         OpenDocumentStream(Path.Combine(dataDir, "input.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running OpenDocumentWithPassword example... ");
+        Console.WriteLine("Running OpenDocumentWithPassword example...");
         OpenDocumentWithPassword(Path.Combine(dataDir, "input.qwerty.pdf"), "qwerty");
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SaveDocument example... ");
+        Console.WriteLine("Running SaveDocument example...");
         SaveDocument(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "SaveDocument.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SaveDocumentStream example... ");
+        Console.WriteLine("Running SaveDocumentStream example...");
         SaveDocumentStream(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "SaveDocumentStream.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SaveDocumentAsPDFx example... ");
+        Console.WriteLine("Running SaveDocumentAsPDFx example...");
         SaveDocumentAsPDFx(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "SaveDocumentAsPDFx.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running MergeDocuments example... ");
+        Console.WriteLine("Running MergeDocuments example...");
         MergeDocuments(Path.Combine(dataDir, "merge1.pdf"),
             Path.Combine(dataDir, "merge2.pdf"),
             Path.Combine(outDir, "MergeDocuments.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SplitDocument example... ");
+        Console.WriteLine("Running SplitDocument example...");
         SplitDocument(Path.Combine(dataDir, "input.pdf"), outDir);
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SetPrivilegesOnExistingPdfFile example... ");
+        Console.WriteLine("Running SetPrivilegesOnExistingPdfFile example...");
         SetPrivilegesOnExistingPdfFile(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "SetPrivileges.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running EncryptPdfFile example... ");
+        Console.WriteLine("Running EncryptPdfFile example...");
         EncryptPdfFile(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "EncryptPdfFile.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running DecryptPdfFile example... ");
+        Console.WriteLine("Running DecryptPdfFile example...");
         DecryptPdfFile(Path.Combine(dataDir, "input.qwerty.pdf"), "qwerty",
             Path.Combine(outDir, "DecryptPdfFile.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running PubSecEncryption example... ");
+        Console.WriteLine("Running PubSecEncryption example...");
         PubSecEncryption(Path.Combine(dataDir, "pub_sec.crt"),
             Path.Combine(dataDir, "pub_sec.pfx"), "12345",
             Path.Combine(outDir, "PubSecEncrypted.pdf"),
             Path.Combine(outDir, "PubSecDecrypted.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ChangePassword example... ");
+        Console.WriteLine("Running ChangePassword example...");
         ChangePassword(Path.Combine(dataDir, "input.qwerty.pdf"), "qwerty",
             Path.Combine(outDir, "ChangePassword.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running DetermineCorrectPasswordFromArray example... ");
+        Console.WriteLine("Running DetermineCorrectPasswordFromArray example...");
         DetermineCorrectPasswordFromArray(Path.Combine(dataDir, "input.qwerty.pdf"));
         Console.WriteLine("...finished.");
     }

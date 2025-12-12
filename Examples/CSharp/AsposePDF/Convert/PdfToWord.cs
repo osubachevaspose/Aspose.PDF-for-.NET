@@ -13,21 +13,21 @@ public static class PdfToWord
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Convert", "PdfToWord");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running ConvertPDFtoWord example... ");
+        Console.WriteLine("Running ConvertPDFtoWord example...");
         ConvertPDFtoWord(Path.Combine(dataDir, "PDFToDOC.pdf"), Path.Combine(outDir, "PDFToDOC.doc"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoWordDocAdvanced example... ");
+        Console.WriteLine("Running ConvertPDFtoWordDocAdvanced example...");
         ConvertPDFtoWordDocAdvanced(Path.Combine(dataDir, "PDFToDOC.pdf"),
             Path.Combine(outDir, "PDFToDOC_with_options.doc"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoWord_DOCX_Format example... ");
+        Console.WriteLine("Running ConvertPDFtoWord_DOCX_Format example...");
         ConvertPDFtoWord_DOCX_Format(Path.Combine(dataDir, "PDFToDOC.pdf"),
             Path.Combine(outDir, "PDFToDOC.docx"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoWord_Advanced_DOCX_Format example... ");
+        Console.WriteLine("Running ConvertPDFtoWord_Advanced_DOCX_Format example...");
         ConvertPDFtoWord_Advanced_DOCX_Format(Path.Combine(dataDir, "PDFToDOC.pdf"),
             Path.Combine(outDir, "PDFToDOC_with_options.docx"));
         Console.WriteLine("...finished.");

@@ -13,34 +13,34 @@ public static class PdfToExcel
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Convert", "PdfToExcel");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running ConvertPDFtoExcel example... ");
+        Console.WriteLine("Running ConvertPDFtoExcel example...");
         ConvertPDFtoExcel(Path.Combine(dataDir, "input.pdf"), Path.Combine(outDir, "PDFToXLS.xlsx"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoExcelAdvanced_InsertBlankColumnAtFirst example... ");
+        Console.WriteLine("Running ConvertPDFtoExcelAdvanced_InsertBlankColumnAtFirst example...");
         ConvertPDFtoExcelAdvanced_InsertBlankColumnAtFirst(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "PDFToXLS_InsertBlankColumnAtFirst.xlsx"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoExcelAdvanced_MinimizeTheNumberOfWorksheets example... ");
+        Console.WriteLine("Running ConvertPDFtoExcelAdvanced_MinimizeTheNumberOfWorksheets example...");
         ConvertPDFtoExcelAdvanced_MinimizeTheNumberOfWorksheets(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "PDFToXLS_MinimizeTheNumberOfWorksheets.xlsx"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoExcelAdvanced_SaveXLS2003 example... ");
+        Console.WriteLine("Running ConvertPDFtoExcelAdvanced_SaveXLS2003 example...");
         ConvertPDFtoExcelAdvanced_SaveXLS2003(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "PDFToXLS.xls"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToCSV example... ");
+        Console.WriteLine("Running ConvertPDFToCSV example...");
         ConvertPDFToCSV(Path.Combine(dataDir, "input.pdf"), Path.Combine(outDir, "PDFToXLS.csv"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToODS example... ");
+        Console.WriteLine("Running ConvertPDFToODS example...");
         ConvertPDFToODS(Path.Combine(dataDir, "input.pdf"), Path.Combine(outDir, "PDFToODS.ods"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToXLSM example... ");
+        Console.WriteLine("Running ConvertPDFToXLSM example...");
         ConvertPDFToXLSM(Path.Combine(dataDir, "input.pdf"), Path.Combine(outDir, "PDFToODS.xlsm"));
         Console.WriteLine("...finished.");
     }

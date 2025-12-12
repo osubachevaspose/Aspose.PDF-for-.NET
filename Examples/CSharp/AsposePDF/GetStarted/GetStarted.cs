@@ -14,11 +14,11 @@ public static class GetStarted
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "GetStarted");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running HelloWorld example... ");
+        Console.WriteLine("Running HelloWorld example...");
         HelloWorld(Path.Combine(outDir, "HelloWorld.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running CreatingComplexPdf example... ");
+        Console.WriteLine("Running CreatingComplexPdf example...");
         CreatingComplexPdf(Path.Combine(dataDir, "aspose-logo.jpg"),
             Path.Combine(outDir, "Complex.pdf"));
         Console.WriteLine("...finished.");
@@ -26,15 +26,15 @@ public static class GetStarted
         //SetLicenseExample("Aspose.Pdf.lic");
         //SetLicenseFromStream("Aspose.Pdf.lic");
 
-        Console.WriteLine("Running LatexWithoutPreambleAndDocEnvironment example... ");
+        Console.WriteLine("Running LatexWithoutPreambleAndDocEnvironment example...");
         LatexWithoutPreambleAndDocEnvironment(Path.Combine(outDir, "LatextScriptInPdf.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running LatexWithPreambleAndDocEnvironment example... ");
+        Console.WriteLine("Running LatexWithPreambleAndDocEnvironment example...");
         LatexWithPreambleAndDocEnvironment(Path.Combine(outDir, "LatextScriptInPdf2.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running LatexTagsSupport example... ");
+        Console.WriteLine("Running LatexTagsSupport example...");
         LatexTagsSupport(Path.Combine(outDir, "Script.pdf"));
         Console.WriteLine("...finished.");
     }

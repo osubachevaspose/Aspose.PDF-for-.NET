@@ -15,46 +15,46 @@ public static class HtmlToPdf
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Convert", "HtmlToPdf");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running ConvertHTMLtoPDF example... ");
+        Console.WriteLine("Running ConvertHTMLtoPDF example...");
         ConvertHTMLtoPDF(Path.Combine(dataDir, "SampleHtmlFile.html"),
             Path.Combine(outDir, "ConvertHTMLtoPDF.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertHTMLtoPDFAdvancedMediaType example... ");
+        Console.WriteLine("Running ConvertHTMLtoPDFAdvancedMediaType example...");
         ConvertHTMLtoPDFAdvancedMediaType(Path.Combine(dataDir, "SampleHtmlFile.html"),
             Path.Combine(outDir, "ConvertHTMLtoPDFAdvancedMediaType.pdf"));
         Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertHTMLtoPDFAdvancedEmbedFonts example... ");
+        //Console.WriteLine("Running ConvertHTMLtoPDFAdvancedEmbedFonts example...");
         //ConvertHTMLtoPDFAdvancedEmbedFonts(Path.Combine(dataDir, "test_fonts.html"),
         //    Path.Combine(outDir, "ConvertHTMLtoPDFAdvanced_EmbedFonts.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertHTMLtoPDFAdvanced_DummyImage example... ");
+        //Console.WriteLine("Running ConvertHTMLtoPDFAdvanced_DummyImage example...");
         //ConvertHTMLtoPDFAdvanced_DummyImage(Path.Combine(dataDir, "test.html"),
         //    Path.Combine(dataDir, "test.jpg"),
         //    Path.Combine(outDir, "html_test.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertHTMLtoPDFAdvanced_WebPage example... ");
+        //Console.WriteLine("Running ConvertHTMLtoPDFAdvanced_WebPage example...");
         //ConvertHTMLtoPDFAdvanced_WebPage(Path.Combine(outDir, "ConvertHTMLtoPDF_WebPage.pdf"));
         //Console.WriteLine("...finished.");
 
-        //Console.WriteLine("Running ConvertHTMLtoPDFAdvancedAuthorized example... ");
+        //Console.WriteLine("Running ConvertHTMLtoPDFAdvancedAuthorized example...");
         //ConvertHTMLtoPDFAdvancedAuthorized(Path.Combine(outDir, "ConvertHTMLtoPDF_Authorized.pdf"));
         //Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertHTMLtoPDFAdvancedSinglePageRendering example... ");
+        Console.WriteLine("Running ConvertHTMLtoPDFAdvancedSinglePageRendering example...");
         ConvertHTMLtoPDFAdvancedSinglePageRendering(Path.Combine(dataDir, "HTMLToPDF.html"),
             Path.Combine(outDir, "RenderContentToSamePage.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertHTMLtoPDFWithSVG example... ");
+        Console.WriteLine("Running ConvertHTMLtoPDFWithSVG example...");
         ConvertHTMLtoPDFWithSVG(Path.Combine(dataDir, "HTMLSVG.html"),
             Path.Combine(outDir, "RenderHTMLwithSVGData.pdf"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertMHTtoPDF example... ");
+        Console.WriteLine("Running ConvertMHTtoPDF example...");
         ConvertMHTtoPDF(Path.Combine(dataDir, "sample.mht"), Path.Combine(outDir, "MhtmlTest.pdf"));
         Console.WriteLine("...finished.");
     }

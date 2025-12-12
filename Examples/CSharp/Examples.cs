@@ -29,6 +29,8 @@ public static class Examples
         HtmlToPdf.RunExamples();
         PdfToHtml.RunExamples();
         ImagesToPdf.RunExamples();
+        PdfToImages.RunExamples();
+        OtherToPdf.RunExamples();
 
         //QuickStart
         //=====================================================

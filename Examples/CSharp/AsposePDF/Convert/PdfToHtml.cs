@@ -13,51 +13,51 @@ public static class PdfToHtml
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Convert", "PdfToHtml");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running ConvertPDFtoHTML example... ");
+        Console.WriteLine("Running ConvertPDFtoHTML example...");
         ConvertPDFtoHTML(Path.Combine(dataDir, "PDFToHTML.pdf"), Path.Combine(outDir, "output.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoMultiPageHTML example... ");
+        Console.WriteLine("Running ConvertPDFtoMultiPageHTML example...");
         ConvertPDFtoMultiPageHTML(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "MultiPageHTML.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SavePDFtoHTMLWithSVG example... ");
+        Console.WriteLine("Running SavePDFtoHTMLWithSVG example...");
         SavePDFtoHTMLWithSVG(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "SaveSVGFiles.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SavePDFtoCompressedHTMLWithSVG example... ");
+        Console.WriteLine("Running SavePDFtoCompressedHTMLWithSVG example...");
         SavePDFtoCompressedHTMLWithSVG(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "CompressedSVGHTML.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running PdfToHtmlSaveImagesAsPngBackground example... ");
+        Console.WriteLine("Running PdfToHtmlSaveImagesAsPngBackground example...");
         PdfToHtmlSaveImagesAsPngBackground(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "imagesAsPngBackground.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running SavePDFtoHTMLWithSeparateImageFolder example... ");
+        Console.WriteLine("Running SavePDFtoHTMLWithSeparateImageFolder example...");
         SavePDFtoHTMLWithSeparateImageFolder(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "HTMLWithSeparateImageFolder.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToHTMLWithBodyContent example... ");
+        Console.WriteLine("Running ConvertPDFToHTMLWithBodyContent example...");
         ConvertPDFToHTMLWithBodyContent(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "CreateSubsequentFiles.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToHTMLWithTransparentTextRendering example... ");
+        Console.WriteLine("Running ConvertPDFToHTMLWithTransparentTextRendering example...");
         ConvertPDFToHTMLWithTransparentTextRendering(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "TransparentTextRendering.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToHTMLWithLayersRendering example... ");
+        Console.WriteLine("Running ConvertPDFToHTMLWithLayersRendering example...");
         ConvertPDFToHTMLWithLayersRendering(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "LayersRendering.html"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFtoHTMLWithStream example... ");
+        Console.WriteLine("Running ConvertPDFtoHTMLWithStream example...");
         ConvertPDFtoHTMLWithStream(Path.Combine(dataDir, "PDFToHTML.pdf"),
             Path.Combine(outDir, "saveToStream.html"));
         Console.WriteLine("...finished.");

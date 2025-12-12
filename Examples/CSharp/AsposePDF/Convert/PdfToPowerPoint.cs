@@ -13,16 +13,16 @@ public static class PdfToPowerPoint
         string outDir = Path.Combine(Examples.GetOutDir(), "AsposePDF", "Convert", "PdfToPowerPoint");
         Directory.CreateDirectory(outDir);
 
-        Console.WriteLine("Running ConvertPDFToPPTX example... ");
+        Console.WriteLine("Running ConvertPDFToPPTX example...");
         ConvertPDFToPPTX(Path.Combine(dataDir, "input.pdf"), Path.Combine(outDir, "PDFToPPT.pptx"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToPPTWithSlidesAsImages example... ");
+        Console.WriteLine("Running ConvertPDFToPPTWithSlidesAsImages example...");
         ConvertPDFToPPTWithSlidesAsImages(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "PDFToPPT_SlidesAsImages.pptx"));
         Console.WriteLine("...finished.");
 
-        Console.WriteLine("Running ConvertPDFToPPTWithCustomProgressHandler example... ");
+        Console.WriteLine("Running ConvertPDFToPPTWithCustomProgressHandler example...");
         ConvertPDFToPPTWithCustomProgressHandler(Path.Combine(dataDir, "input.pdf"),
             Path.Combine(outDir, "PDFToPPTWithProgressTracking.pptx"));
         Console.WriteLine("...finished.");
