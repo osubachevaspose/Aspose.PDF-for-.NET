@@ -3,6 +3,7 @@ using System.IO;
 using Aspose.Pdf.Examples.CSharp.AsposePDF.Basic;
 using Aspose.Pdf.Examples.CSharp.AsposePDF.Convert;
 using Aspose.Pdf.Examples.CSharp.AsposePDF.GetStarted;
+using Convert = Aspose.Pdf.Examples.CSharp.AsposePDF.Convert.Convert;
 
 namespace Aspose.Pdf.Examples.CSharp;
 
@@ -23,14 +24,7 @@ public static class Examples
 
         GetStarted.RunExamples();
         Basic.RunExamples();
-        PdfToWord.RunExamples();
-        PdfToExcel.RunExamples();
-        PdfToPowerPoint.RunExamples();
-        HtmlToPdf.RunExamples();
-        PdfToHtml.RunExamples();
-        ImagesToPdf.RunExamples();
-        PdfToImages.RunExamples();
-        OtherToPdf.RunExamples();
+        Convert.RunExamples();
 
         //QuickStart
         //=====================================================

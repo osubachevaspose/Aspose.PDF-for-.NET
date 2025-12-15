@@ -235,6 +235,7 @@ public static class OtherToPdf
     public static void ConvertTeXtoPDF(string inFileName, string outFileName)
     {
         TeXLoadOptions loadOptions = new TeXLoadOptions();
+        //loadOptions.OutputDirectory = Path.GetDirectoryName(outFileName);
         using (Document doc = new Document(inFileName, loadOptions))
         {
             doc.Save(outFileName);
