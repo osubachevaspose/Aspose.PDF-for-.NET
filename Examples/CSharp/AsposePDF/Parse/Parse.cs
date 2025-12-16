@@ -8,6 +8,12 @@ public sealed class Parse
     {
         //TextFromPdf.RunExamples();
         //ParagraphFromPdf.RunExamples();
-        ScriptsFromPdf.RunExamples();
+        //ScriptsFromPdf.RunExamples();
+        //ImagesFromPdf.RunExamples();
+        //FontsFromPdf.RunExamples();
+        //DataFromTable.RunExamples();
+        //DataFromAcroForm.RunExamples();
+        //TextFromStamps.RunExamples();
+        VectorDataFromPdf.RunExamples();
     }
 }
