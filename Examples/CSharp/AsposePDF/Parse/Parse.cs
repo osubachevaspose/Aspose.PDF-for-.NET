@@ -1,6 +1,6 @@
 ﻿namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Parse;
 
-public sealed class Parse
+public static class Parse
 {
     //https://docs.aspose.com/pdf/net/parsing/
 
