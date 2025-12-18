@@ -23,10 +23,10 @@ public static class Examples
         //=====================================================
         //=====================================================
 
-        //GetStarted.RunExamples();
-        //Basic.RunExamples();
-        //Convert.RunExamples();
-        //Parse.RunExamples();
+        GetStarted.RunExamples();
+        Basic.RunExamples();
+        Convert.RunExamples();
+        Parse.RunExamples();
         Advanced.RunExamples();
 
         //QuickStart
