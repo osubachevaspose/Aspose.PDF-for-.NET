@@ -1,0 +1,405 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Advanced.Documents
+{
+    internal class Manipulate
+    {
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void ValidateToPdfA1aStandard()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "ValidatePDFAStandard.pdf"))
+            {
+                // Validate PDF for PDF/A-1a
+                document.Validate(dataDir + "validation-result-A1A.xml", Aspose.Pdf.PdfFormat.PDF_A_1A);
+            }
+        }
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void ValidateToPdfA1bStandard()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "ValidatePDFAStandard.pdf"))
+            {
+                // Validate PDF for PDF/A-1b
+                document.Validate(dataDir + "validation-result-A1B.xml", Aspose.Pdf.PdfFormat.PDF_A_1B);
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void AddTOCToPdf()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "AddTOC.pdf"))
+            {
+                // Get access to the first page of PDF file
+                var tocPage = document.Pages.Insert(1);
+
+                // Create an object to represent TOC information
+                var tocInfo = new Aspose.Pdf.TocInfo();
+                var title = new Aspose.Pdf.Text.TextFragment("Table Of Contents");
+                title.TextState.FontSize = 20;
+                title.TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+
+                // Set the title for TOC
+                tocInfo.Title = title;
+                tocPage.TocInfo = tocInfo;
+
+                // Create string objects which will be used as TOC elements
+                string[] titles = { "First page", "Second page", "Third page", "Fourth page" };
+
+                for (int i = 0; i < 2; i++)
+                {
+                    // Create Heading object
+                    var heading = new Aspose.Pdf.Heading(1);
+                    var segment = new Aspose.Pdf.Text.TextSegment();
+                    heading.TocPage = tocPage;
+                    heading.Segments.Add(segment);
+
+                    // Specify the destination page for the heading object
+                    heading.DestinationPage = document.Pages[i + 2];
+
+                    // Destination page
+                    heading.Top = document.Pages[i + 2].Rect.Height;
+
+                    // Destination coordinate
+                    segment.Text = titles[i];
+
+                    // Add heading to the page containing TOC
+                    tocPage.Paragraphs.Add(heading);
+                }
+
+                // Save PDF document
+                document.Save(dataDir + "TOC_out.pdf");
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void CreateTocWithCustomFormatting()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Create PDF document
+            using (var document = new Aspose.Pdf.Document())
+            {
+                // Add a TOC page
+                var tocPage = document.Pages.Add();
+
+                // Create TOC information
+                var tocInfo = new Aspose.Pdf.TocInfo();
+
+                // Set LeaderType
+                tocInfo.LineDash = Aspose.Pdf.Text.TabLeaderType.Solid;
+
+                // Set the title for TOC
+                var title = new Aspose.Pdf.Text.TextFragment("Table Of Contents");
+                title.TextState.FontSize = 30;
+                tocInfo.Title = title;
+
+                // Add the TOC section to the document
+                tocPage.TocInfo = tocInfo;
+
+                // Define the format of the four levels list by setting the left margins
+                // and text format settings of each level
+                tocInfo.FormatArrayLength = 4;
+
+                // Level 1
+                tocInfo.FormatArray[0].Margin.Left = 0;
+                tocInfo.FormatArray[0].Margin.Right = 30;
+                tocInfo.FormatArray[0].LineDash = Aspose.Pdf.Text.TabLeaderType.Dot;
+                tocInfo.FormatArray[0].TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold | Aspose.Pdf.Text.FontStyles.Italic;
+
+                // Level 2
+                tocInfo.FormatArray[1].Margin.Left = 10;
+                tocInfo.FormatArray[1].Margin.Right = 30;
+                tocInfo.FormatArray[1].LineDash = Aspose.Pdf.Text.TabLeaderType.None;
+                tocInfo.FormatArray[1].TextState.FontSize = 10;
+
+                // Level 3
+                tocInfo.FormatArray[2].Margin.Left = 20;
+                tocInfo.FormatArray[2].Margin.Right = 30;
+                tocInfo.FormatArray[2].TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+
+                // Level 4
+                tocInfo.FormatArray[3].LineDash = Aspose.Pdf.Text.TabLeaderType.Solid;
+                tocInfo.FormatArray[3].Margin.Left = 30;
+                tocInfo.FormatArray[3].Margin.Right = 30;
+                tocInfo.FormatArray[3].TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+
+                // Create a section in the Pdf document
+                var page = document.Pages.Add();
+
+                // Add four headings in the section
+                for (int level = 1; level <= 4; level++)
+                {
+                    var heading = new Aspose.Pdf.Heading(level);
+                    var segment = new Aspose.Pdf.Text.TextSegment();
+                    heading.Segments.Add(segment);
+                    heading.IsAutoSequence = true;
+                    heading.TocPage = tocPage;
+                    segment.Text = "Sample Heading " + level;
+                    heading.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Arial Unicode MS");
+
+                    // Add the heading into Table Of Contents.
+                    heading.IsInList = true;
+                    page.Paragraphs.Add(heading);
+                }
+
+                // Save PDF document
+                document.Save(dataDir + "TOC_out.pdf");
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void CreateTocWithHiddenPageNumbers()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Create PDF document
+            using (var document = new Aspose.Pdf.Document())
+            {
+                // Add a TOC page
+                var tocPage = document.Pages.Add();
+
+                // Create TOC information
+                var tocInfo = new Aspose.Pdf.TocInfo();
+
+                // Set the title for TOC
+                var title = new Aspose.Pdf.Text.TextFragment("Table Of Contents");
+                title.TextState.FontSize = 20;
+                title.TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+                tocInfo.Title = title;
+
+                // Add the TOC section to the document
+                tocPage.TocInfo = tocInfo;
+
+                // Hide page numbers in TOC
+                tocInfo.IsShowPageNumbers = false;
+
+                // Define the format of the four levels list by setting the left margins and
+                // text format settings of each level
+                tocInfo.FormatArrayLength = 4;
+
+                // Level 1
+                tocInfo.FormatArray[0].Margin.Right = 0;
+                tocInfo.FormatArray[0].TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold | Aspose.Pdf.Text.FontStyles.Italic;
+
+                // Level 2
+                tocInfo.FormatArray[1].Margin.Left = 30;
+                tocInfo.FormatArray[1].TextState.Underline = true;
+                tocInfo.FormatArray[1].TextState.FontSize = 10;
+
+                // Level 3
+                tocInfo.FormatArray[2].TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+
+                // Level 4
+                tocInfo.FormatArray[3].TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+
+                // Create a section in the Pdf document
+                var page = document.Pages.Add();
+
+                // Add four headings in the section
+                for (int level = 1; level <= 4; level++)
+                {
+                    var heading = new Aspose.Pdf.Heading(level);
+                    var segment = new Aspose.Pdf.Text.TextSegment();
+                    heading.TocPage = tocPage;
+                    heading.Segments.Add(segment);
+                    heading.IsAutoSequence = true;
+                    segment.Text = "this is heading of level " + level;
+                    heading.IsInList = true;
+                    page.Paragraphs.Add(heading);
+                }
+
+                // Save PDF document
+                document.Save(dataDir + "TOC_out.pdf");
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void CustomizePageNumbersAddingToC()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "CustomizePageNumbersAddingToC.pdf"))
+            {
+                // Get access to first page of PDF file
+                Page tocPage = document.Pages.Insert(1);
+
+                // Create object to represent TOC information
+                var tocInfo = new Aspose.Pdf.TocInfo();
+                var title = new Aspose.Pdf.Text.TextFragment("Table Of Contents");
+                title.TextState.FontSize = 20;
+                title.TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+
+                // Set the title for TOC
+                tocInfo.Title = title;
+                tocInfo.PageNumbersPrefix = "P";
+                tocPage.TocInfo = tocInfo;
+
+                // Loop through the pages to create TOC entries
+                for (int i = 1; i < document.Pages.Count; i++)
+                {
+                    // Create Heading object
+                    var heading2 = new Aspose.Pdf.Heading(1);
+                    var segment2 = new Aspose.Pdf.Text.TextSegment();
+                    heading2.TocPage = tocPage;
+                    heading2.Segments.Add(segment2);
+
+                    // Specify the destination page for heading object
+                    heading2.DestinationPage = document.Pages[i + 1];
+
+                    // Destination page
+                    heading2.Top = document.Pages[i + 1].Rect.Height;
+
+                    // Destination coordinate
+                    segment2.Text = "Page " + i.ToString();
+
+                    // Add heading to page containing TOC
+                    tocPage.Paragraphs.Add(heading2);
+                }
+
+                // Save PDF document
+                document.Save(dataDir + "CustomizePageNumbersAddingToC_out.pdf");
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void SetExpiryDate()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Create PDF document
+            using (var document = new Aspose.Pdf.Document())
+            {
+                // Add page
+                var page = document.Pages.Add();
+
+                // Add text fragment to paragraphs collection of page object
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Hello World..."));
+
+                // Create JavaScript object to set PDF expiry date
+                var javaScript = new Aspose.Pdf.Annotations.JavascriptAction(
+                    "var year=2017;" +
+                    "var month=5;" +
+                    "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());" +
+                    "expiry = new Date(year, month);" +
+                    "if (today.getTime() > expiry.getTime())" +
+                    "app.alert('The file is expired. You need a new one.');"
+                );
+
+                // Set JavaScript as PDF open action
+                document.OpenAction = javaScript;
+
+                // Save PDF Document
+                document.Save(dataDir + "SetExpiryDate_out.pdf");
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void DetermineProgress()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "AddTOC.pdf"))
+            {
+                // Create DocSaveOptions instance and set custom progress handler
+                var saveOptions = new Aspose.Pdf.DocSaveOptions();
+                saveOptions.CustomProgressHandler = new Aspose.Pdf.UnifiedSaveOptions.ConversionProgressEventHandler(ShowProgressOnConsole);
+
+                // Save PDF Document
+                document.Save(dataDir + "DetermineProgress_out.pdf", saveOptions);
+            }
+        }
+
+        // Method to handle progress and display it on the console
+        private static void ShowProgressOnConsole(Aspose.Pdf.UnifiedSaveOptions.ProgressEventHandlerInfo eventInfo)
+        {
+            switch (eventInfo.EventType)
+            {
+                case Aspose.Pdf.ProgressEventType.TotalProgress:
+                    Console.WriteLine(String.Format("{0}  - Conversion progress : {1}% .", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString()));
+                    break;
+                case Aspose.Pdf.ProgressEventType.SourcePageAnalysed:
+                    Console.WriteLine(String.Format("{0}  - Source page {1} of {2} analyzed.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                    break;
+                case Aspose.Pdf.ProgressEventType.ResultPageCreated:
+                    Console.WriteLine(String.Format("{0}  - Result page's {1} of {2} layout created.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                    break;
+                case Aspose.Pdf.ProgressEventType.ResultPageSaved:
+                    Console.WriteLine(String.Format("{0}  - Result page {1} of {2} exported.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void FlattenForms()
+        {
+            // The path to the documents directory
+            var dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "input.pdf"))
+            {
+                // Flatten Fillable PDF
+                if (document.Form.Fields.Count() > 0)
+                {
+                    foreach (var item in document.Form.Fields)
+                    {
+                        item.Flatten();
+                    }
+                }
+
+                // Save PDF document
+                document.Save(dataDir + "FlattenForms_out.pdf");
+            }
+        }
+
+        // For complete examples and data files, visit https://github.com/aspose-pdf/Aspose.PDF-for-.NET
+        private static void IncrementalUpdatesCheck()
+        {
+            // The path to the documents directory
+            string dataDir = RunExamples.GetDataDir_AsposePdf_QuickStart();
+
+            // Open PDF document
+            using (var document = new Aspose.Pdf.Document(dataDir + "input.pdf"))
+            {
+                // Check for incremental updates
+                bool updatedIncrementally = document.HasIncrementalUpdate();
+
+                // Output the result
+                if (updatedIncrementally)
+                {
+                    Console.WriteLine("This document has been incrementally updated.");
+                }
+                else
+                {
+                    Console.WriteLine("This document has no incremental updates.");
+                }
+            }
+        }
+
+
+    }
+}

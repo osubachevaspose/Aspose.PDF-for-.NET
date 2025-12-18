@@ -8,7 +8,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Advanced.Documents;
 
 public static class Formatting
 {
-    //https://docs.aspose.com/pdf/net/formatting-pdf-doc/
+    //https://docs.aspose.com/pdf/net/formatting-pdf-document/
 
     public static void RunExamples()
     {
