@@ -6,8 +6,9 @@ public static class Documents
 
     public static void RunExamples()
     {
-        //Create.RunExamples();
-        //Formatting.RunExamples();
+        Create.RunExamples();
+        Formatting.RunExamples();
         Manipulate.RunExamples();
+        Optimize.RunExamples();
     }
 }
