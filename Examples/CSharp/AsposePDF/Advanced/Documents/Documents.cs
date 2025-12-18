@@ -8,5 +8,6 @@ public static class Documents
     {
         Create.RunExamples();
         Formatting.RunExamples();
+        Manipulate.RunExamples();
     }
 }
