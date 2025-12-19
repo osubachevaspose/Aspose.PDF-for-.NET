@@ -6,14 +6,10 @@ using Aspose.Pdf.Optimization;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Advanced.Documents;
 
-/// <summary>
-/// This class contains examples of how to use optimization features in Aspose.PDF for .NET.
-/// </summary>
 public static class Optimize
 {
-    /// <summary>
-    /// Runs the examples.
-    /// </summary>
+    //https://docs.aspose.com/pdf/net/optimize-pdf/
+
     public static void RunExamples()
     {
         string dataDir = Path.Combine(Examples.GetDataDir(), "AsposePDF", "Advanced", "Documents", "Optimize");
