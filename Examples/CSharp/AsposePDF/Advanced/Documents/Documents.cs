@@ -7,10 +7,10 @@ public static class Documents
     public static void RunExamples()
     {
         Create.RunExamples();
-        Layers.RunExamples();
         Formatting.RunExamples();
         Manipulate.RunExamples();
         Optimize.RunExamples();
+        Layers.RunExamples();
         HiddenData.RunExamples();
     }
 }
